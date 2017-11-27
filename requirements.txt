@@ -1,0 +1,4 @@
+dj-database-url==0.4.2
+gunicorn==19.7.1
+virtualenv==15.1.0
+Django==1.8
