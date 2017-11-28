@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import AnonymousUser, User
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from form.forms import HomeForm
@@ -27,7 +28,7 @@ class HomeView(TemplateView):
 		form = HomeForm(request.POST)
 		if form.is_valid():
 			_post = form.save(commit=False)
-			_post.user = request.user
+			# _post.user = request.user
 			_post.save()
 			text = form.cleaned_data['post']
 			form = HomeForm()											# clear text field
