@@ -7,5 +7,5 @@ from django.contrib.auth.models import AnonymousUser, User
 
 class Blurb(models.Model):
 	post = models.CharField(max_length=500)
-	user = models.ForeignKey(request.user, default=1) # FIX
+	# user = models.ForeignKey(User, default=1) # FIX
 	date = models.DateTimeField(auto_now=True)

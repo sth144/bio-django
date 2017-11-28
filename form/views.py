@@ -28,7 +28,7 @@ class HomeView(TemplateView):
 		form = HomeForm(request.POST)
 		if form.is_valid():
 			_post = form.save(commit=False)
-			_post.user = request.user # FIX
+			# _post.user = request.user # FIX
 			_post.save()
 			text = form.cleaned_data['post']
 			form = HomeForm()											# clear text field
