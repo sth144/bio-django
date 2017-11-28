@@ -18,3 +18,5 @@ def db(request):
 
     return render(request, 'db.html', {'greetings': greetings})
 
+def hello(request):
+	return HttpResponse('Hello from Python!')
