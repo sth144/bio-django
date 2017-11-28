@@ -5,6 +5,8 @@ admin.autodiscover()
 
 import hello.views
 
+import form.views
+
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
@@ -12,5 +14,6 @@ import hello.views
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
+    url(r'^form', form.views.HomeView.as_view(), name='form'),
     url(r'^admin/', include(admin.site.urls)),
 ]
