@@ -8,5 +8,5 @@ from django.contrib.auth.models import User
 
 class Blurb(models.Model):
 	post = models.CharField(max_length=500)
-	# user = models.ForeignKey(User)
+	user = models.ForeignKey(User)
 	date = models.DateTimeField(auto_now=True)
