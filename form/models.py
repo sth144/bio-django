@@ -8,5 +8,5 @@ from django.db import models
 
 class Blurb(models.Model):
 	post = models.CharField(max_length=500)
-	user = models.ForeignKey(User)
+	user = models.ForeignKey(User) # FIX
 	date = models.DateTimeField(auto_now=True)
