@@ -4,8 +4,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 import hello.views
-
 import form.views
+import ReverseComplement.views
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^form', form.views.HomeView.as_view(), name='form'),
+    url(r'^reversecomplement', ReverseComplement.views.HomeView.as_view(), name='form'),
     url(r'^admin/', include(admin.site.urls)),
 ]
