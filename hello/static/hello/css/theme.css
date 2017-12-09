@@ -1,6 +1,6 @@
 .jumbotron {
-    background: #90F0D0;
-    color: white;
+    background: #70D0B0;
+    color: #666666;
     padding-bottom: 80px
 }
 .jumbotron .btn-primary {
@@ -11,7 +11,7 @@
     background: #7646c1
 }
 .jumbotron p {
-    color: #d9ccee;
+    color: #666666;
     max-width: 75%;
     margin: 1em auto 2em
 }
@@ -30,4 +30,20 @@
 }
 .jumbotron .lang-logo img {
     max-width: 100%
+}
+
+.alert {
+    margin-top: 4%;
+    margin-bottom: 0%;
+    height: 200px;
+}
+
+.my-icon {
+  height: 200px;
+  width: 200px;
+}
+
+.my-icon-small {
+  height: 40px;
+  width: 40px;
 }
