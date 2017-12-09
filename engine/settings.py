@@ -27,7 +27,7 @@ SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEST_RUNNER = 'gettingstarted.heroku_test_runner.HerokuDiscoverRunner'
+TEST_RUNNER = 'engine.heroku_test_runner.HerokuDiscoverRunner'
 
 
 # Application definition
@@ -41,8 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'hello',
     'form',
-    'Data',
-    'ReverseComplement'
+    'data',
+    'reversecomplement'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,7 +59,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'gettingstarted.urls'
+ROOT_URLCONF = 'engine.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gettingstarted.wsgi.application'
+WSGI_APPLICATION = 'engine.wsgi.application'
 
 
 # Database
