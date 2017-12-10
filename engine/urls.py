@@ -6,6 +6,7 @@ admin.autodiscover()
 import hello.views
 import form.views
 import ReverseComplement.views                      # Had to capitalize for Heroku
+import Data.views                                   # Had to capitalize for Heroku
 
 # Examples:
 # url(r'^$', 'engine.views.home', name='home'),
