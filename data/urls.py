@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from . import views
+from Data import views
 
 urlpatterns = [
     url(r'^$', views.db, name='db'),
