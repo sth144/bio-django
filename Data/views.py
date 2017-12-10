@@ -10,7 +10,7 @@ def db(request):
     RNASeqs = RNASeq.objects.all()
     PeptideSeqs = PeptideSeq.objects.all()
 
-    return render(request, 'db.html', {
+    return render(request, 'app/data/templates/db.html', {
         'DNASeqs': DNASeqs,
         'RNASeqs': RNASeqs,
         'PeptideSeqs': PeptideSeqs
