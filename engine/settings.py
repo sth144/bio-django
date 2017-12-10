@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'hello',
     'form',
-    'Data',
+    'Data',                         # Had to capitalize to avoid equivocation. See appconfig
     'reversecomplement'
 )
 
