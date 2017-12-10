@@ -13,7 +13,7 @@ import ReverseComplement.views                      # Had to capitalize for Hero
 
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
-    url(r'^db', include('data.urls')),
+    url(r'^db', include('Data.urls')),
     url(r'^form', form.views.HomeView.as_view(), name='form'),
     url(r'^reversecomplement', ReverseComplement.views.HomeView.as_view(), name='form'),
     url(r'^admin/', include(admin.site.urls)),
