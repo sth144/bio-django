@@ -9,7 +9,7 @@
     <h1>Reverse Complement</h1>
   </div>
 </div>
-<div class="container text-center">
+<div class="container text-center"><br><br>
 <form method="POST">
   {% csrf_token %}
   <div class="row">
@@ -29,11 +29,10 @@
     <strong>Output:</strong>
   </div>
   <div class="col-md-8 text-left">
-    <textarea rows="3" cols="56" style="overflow:hidden">{{text}}
-    </textarea>
+    <textarea rows="3" cols="56" style="overflow:hidden" id="output">{{text}}</textarea>
   </div>
 
 </div><br>
-<button>Copy</button>
+<button onclick="clickCopy()">Copy</button>
 </div>
 {% endblock %}

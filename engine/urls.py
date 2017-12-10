@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^form', form.views.HomeView.as_view(), name='form'),
     url(r'^reversecomplement', ReverseComplement.views.HomeView.as_view(), name='form'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^dnaupload', Data.views.dnaupload)
 ]

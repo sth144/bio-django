@@ -15,3 +15,8 @@ def db(request):
         'RNASeqs': RNASeqs,
         'PeptideSeqs': PeptideSeqs
     })
+
+
+def dnaupload(request):
+
+    return render(request, 'dnaupload.html')
