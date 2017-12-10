@@ -15,6 +15,6 @@ urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', include('data.urls')),
     url(r'^form', form.views.HomeView.as_view(), name='form'),
-    url(r'^reversecomplement', reversecomplement.views.HomeView.as_view(), name='form'),
+    url(r'^reversecomplement', ReverseComplement.views.HomeView.as_view(), name='form'),
     url(r'^admin/', include(admin.site.urls)),
 ]
