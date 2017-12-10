@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'hello',
     'form',
     'Data',                         # Had to capitalize to avoid equivocation. See appconfig
-    'reversecomplement'
+    'ReverseComplement'
 )
 
 MIDDLEWARE_CLASSES = (
