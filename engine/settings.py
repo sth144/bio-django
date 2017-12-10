@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'hello',
     'form',
-    'data',
+    'Data',
     'reversecomplement'
 )
 
