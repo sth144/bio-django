@@ -38,8 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',    
-    'django_numpy',
+    'django.contrib.staticfiles',
     'hello',
     'form',
     'Data',                         # Had to capitalize to avoid equivocation. See appconfig
