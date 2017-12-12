@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import AnonymousUser, User
 from django.http import HttpResponse
 from django.views.generic import TemplateView
-from form.forms import HomeForm
+from .forms import HomeForm
 from .process import computeGC
 
 from .models import *
@@ -17,16 +17,12 @@ class HomeView(TemplateView):
 
 	def get(self, request):
 		form = HomeForm()
-		posts = RCSequence.objects.all()
-		args = {'form': form, 'posts': posts}
+		args = {'form': form,}
 		return render(request, self.template_name, args)
 
 	def post(self, request):
 		form = HomeForm(request.POST)
 		if form.is_valid():
-			post = form.save(commit=False)
-			# _post.user = request.user # FIX
-			post.save()
 			posted = form.cleaned_data['post']
 			result = computeGC(form.cleaned_data['post'])
 			form = HomeForm()											# clear text field

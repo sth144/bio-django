@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+      <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
+    <h1>Compute Consensus Sequence</h1>
+  </div>
+</div>
+<div class="container text-center"><br><br>
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-3 text-right">
+        <p><label for="id_post">Check Sequence:</label></p>
+      </div>
+      <div class="col-md-9 text-left">
+        <p><textarea rows=5 cols=80 name="post" required id="id_post"></textarea>{{post}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 text-right">
+        <p><label for="id_against">Against Sequence:</label></p>
+      </div>
+      <div class="col-md-9 text-left">
+        <p><textarea rows=5 cols=80 name="against" required id="id_against">{{against}}</textarea></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10 text-right">
+        <button type="submit">Submit</button><br><br>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="row">
+    <div class="col-md-3 text-right">
+      <p><strong>Consensus:</strong></p>
+    </div>
+    <div class="col-md-9 text-left">
+      <p><textarea rows=5 cols=80 id="output">{{result}}</textarea></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 text-right">
+      <button onclick="clickCopy()">Copy</button>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

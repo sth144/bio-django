@@ -1,13 +1,20 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
+
 [packages]
-dj-database-url = "*"
-django = "*"
-gunicorn = "*"
-psycopg2 = "*"
+
+dj-database-url = "==0.4.2"
+django = "==1.8"
+gunicorn = "==19.7.1"
+"psycopg2" = "*"
 whitenoise = "*"
+virtualenv = "==15.1.0"
+django-numpy = "*"
+
 
 [requires]
+
 python_version = "3.6"

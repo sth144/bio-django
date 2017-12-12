@@ -38,12 +38,14 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',    
+    'django_numpy',
     'hello',
     'form',
     'Data',                         # Had to capitalize to avoid equivocation. See appconfig
     'ReverseComplement',
-    'ComputeGC'
+    'ComputeGC',
+    'ConsensusSequence'
 )
 
 MIDDLEWARE_CLASSES = (

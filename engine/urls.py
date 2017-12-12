@@ -7,6 +7,7 @@ import hello.views
 import form.views
 import ReverseComplement.views
 import ComputeGC.views
+import ConsensusSequence.views
 import Data.views                                   # Had to capitalize for Heroku
 
 # Examples:
@@ -19,6 +20,7 @@ urlpatterns = [
     url(r'^form', form.views.HomeView.as_view(), name='form'),
     url(r'^reversecomplement', ReverseComplement.views.HomeView.as_view(), name='form'),
     url(r'^computegc', ComputeGC.views.HomeView.as_view(), name='form'),
+    url(r'^consensussequence', ConsensusSequence.views.HomeView.as_view(), name='form'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^dnaupload', Data.views.DNAView.as_view(), name='form'),
     url(r'^rnaupload', Data.views.RNAView.as_view(), name='form'),
