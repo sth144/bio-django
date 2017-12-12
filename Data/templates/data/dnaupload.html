@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container text-center">
+
+  <div class="jumbotron text-center">
+    <h1>Upload a DNA sequence</h1>
+  </div>
+
+  <form method="POST">
+    {% csrf_token %}
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+      <div class="col-md-1 text-right">
+        <p><label for="id_name">Name:</label>
+      </div>
+
+      <div class="col-md-8 text-left">
+        <input type="text" name="name" required id="id_name" /></p>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+      <div class="col-md-1 text-right">
+        <p><label for="id_sequence">Sequence:</label>
+      </div>
+
+      <div class="col-md-8 text-left">
+        <textarea rows=5 cols=80 name="sequence" required id="id_sequence"></textarea></p>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-8 text-right">
+        <button type="submit">Submit</button>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}

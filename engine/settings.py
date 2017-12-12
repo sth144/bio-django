@@ -42,7 +42,8 @@ INSTALLED_APPS = (
     'hello',
     'form',
     'Data',                         # Had to capitalize to avoid equivocation. See appconfig
-    'ReverseComplement'
+    'ReverseComplement',
+    'ComputeGC'
 )
 
 MIDDLEWARE_CLASSES = (
