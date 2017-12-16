@@ -44,7 +44,14 @@ INSTALLED_APPS = (
     'Data',                         # Had to capitalize to avoid equivocation. See appconfig
     'ReverseComplement',
     'ComputeGC',
-    'ConsensusSequence'
+    'ConsensusSequence',
+    'BaseDistribution',
+    'Transcriber',
+    'Translator',
+    'HammingDistance',
+    'ParamFibo',
+    'ParseMotif',
+    'ProbabilityDom',
 )
 
 MIDDLEWARE_CLASSES = (

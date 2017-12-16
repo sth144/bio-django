@@ -13,7 +13,7 @@ from .models import *
     #return render(request, 'form/form.html')
 
 class HomeView(TemplateView):
-	template_name = 'ConsensusSequence/form.html'
+	template_name = 'BaseDistribution/form.html'
 
 	def get(self, request):
 		form = HomeForm()
@@ -24,9 +24,18 @@ class HomeView(TemplateView):
 		form = HomeForm(request.POST)
 		if form.is_valid():
 			posted = form.cleaned_data['post']
-			result = consensusSequence(posted)
-			print(result)
+			result = baseDistribution(posted)
+			total = sum(result)
+			distribution = []
+			for i in range(0, len(result)):
+				distribution.append(str((result[i] / total)))
+			print(distribution)
 			form = HomeForm()											# clear text field
 			# return redirect('form/form.html')							# refresh page (?)
-		args = {'form': form, 'posted': posted, 'result': result}
+		args = {
+			'form': form, 
+			'posted': posted, 
+			'result': result,
+			'distribution': distribution
+		}
 		return render(request, self.template_name, args)

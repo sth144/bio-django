@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+      <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
+    <h1>Parametric Fibonacci Calculator</h1>
+  </div>
+</div>
+<div class="container text-center"><br><br>
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <p><label for="id_post">
+          n (generations):
+        </label><br>
+        </p>
+      </div>
+      <div class="col-md-8 text-left">
+        <p><input type="text" name="post" required id="id_post" value="{{posted}}"></input></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <p><label for="id_against">
+          k (offspring per generation):</label><br>
+        </p>
+      </div>
+      <div class="col-md-8 text-left">
+        <p><input type="text" name="against" required id="id_against" value="{{against}}"></input></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 text-right">
+        <button type="submit">Submit</button><br><br>
+      </div>
+    </div>
+
+  </form>
+
+  <!--Output-->
+  <div class="row">
+    <div class="col-md-4 text-right">
+      <!--Jinja-formatted output label-->
+      <p><label>
+        {{outputLabel.0}}
+        {{posted}}<br>
+        {{outputLabel.1}}
+        {{against}}<br>
+        {{outputLabel.2}}
+      </label></p>
+    </div>
+    <div class="col-md-8 text-left">
+      <p><br><br>{{result}}</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

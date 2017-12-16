@@ -6,7 +6,7 @@
 <div class="jumbotron text-center">
   <div class="container">
       <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
-    <h1>Compute Consensus Sequence</h1>
+    <h1>DNA Base Distribution</h1>
   </div>
 </div>
 <div class="container text-center"><br><br>
@@ -15,7 +15,7 @@
     {% csrf_token %}
     <div class="row">
       <div class="col-md-3 text-right">
-        <p><label for="id_post">Check Sequences:<br>(Comma Separated)</label></p>
+        <p><label for="id_post">Input Sequence:<br></label></p>
       </div>
       <div class="col-md-9 text-left">
         <p><textarea rows=7 cols=80 name="post" required id="id_post"></textarea>{{post}}</p>
@@ -31,19 +31,34 @@
   </form>
 
   <div class="row">
-    <div class="col-md-3 text-right">
-      <p><strong>Consensus:</strong></p>
-    </div>
+    <div class="col-md-2"></div>
     <div class="col-md-9 text-left">
-      <p><textarea rows=5 cols=80 id="output">{{result}}</textarea></p>
+      <table>
+        <thead>
+          <tr>
+            <th>
+            <th>A
+            <th>T
+            <th>C
+            <th>G
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-right">Count
+            {% for count in result %}
+              <td>{{count}}</td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <th class="text-right">Distribution
+            {% for portion in distribution %}
+              <td>{{portion}}</td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-9 text-right">
-      <button onclick="clickCopy()">Copy</button>
-    </div>
-  </div>
-
 </div>
 {% endblock %}

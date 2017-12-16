@@ -13,7 +13,7 @@ from .models import *
     #return render(request, 'form/form.html')
 
 class HomeView(TemplateView):
-	template_name = 'ConsensusSequence/form.html'
+	template_name = 'ProbabilityDom/form.html'
 
 	def get(self, request):
 		form = HomeForm()
@@ -23,10 +23,18 @@ class HomeView(TemplateView):
 	def post(self, request):
 		form = HomeForm(request.POST)
 		if form.is_valid():
-			posted = form.cleaned_data['post']
-			result = consensusSequence(posted)
-			print(result)
+			k = form.cleaned_data['k']
+			m = form.cleaned_data['m']
+			n = form.cleaned_data['n']
+
+			# process data
+			result = probabilityDom(k, m, n)
 			form = HomeForm()											# clear text field
-			# return redirect('form/form.html')							# refresh page (?)
-		args = {'form': form, 'posted': posted, 'result': result}
+		args = {
+			'form': form, 
+			'k': k, 
+			'm': m,
+			'n': n,
+			'result': result,
+		}
 		return render(request, self.template_name, args)

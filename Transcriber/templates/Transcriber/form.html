@@ -6,7 +6,7 @@
 <div class="jumbotron text-center">
   <div class="container">
       <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
-    <h1>Compute Consensus Sequence</h1>
+    <h1>DNA Sequence Transcriber</h1>
   </div>
 </div>
 <div class="container text-center"><br><br>
@@ -15,7 +15,7 @@
     {% csrf_token %}
     <div class="row">
       <div class="col-md-3 text-right">
-        <p><label for="id_post">Check Sequences:<br>(Comma Separated)</label></p>
+        <p><label for="id_post">Input DNA:<br></label></p>
       </div>
       <div class="col-md-9 text-left">
         <p><textarea rows=7 cols=80 name="post" required id="id_post"></textarea>{{post}}</p>
@@ -32,18 +32,18 @@
 
   <div class="row">
     <div class="col-md-3 text-right">
-      <p><strong>Consensus:</strong></p>
+      <p><label>Output mRNA</label></p>
     </div>
     <div class="col-md-9 text-left">
-      <p><textarea rows=5 cols=80 id="output">{{result}}</textarea></p>
+      <p><textarea rows=7 cols=80 name="post" id="output">{{result}}</textarea></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-9 text-right">
-      <button onclick="clickCopy()">Copy</button>
+      <button onclick='clickCopy()'>Copy</button><br><br>
     </div>
   </div>
-
 </div>
+
 {% endblock %}

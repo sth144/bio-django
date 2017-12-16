@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+      <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
+    <h1>Probability of Dominant Phenotype</h1>
+    <h4>
+      This app takes three positive integers k, m, and n as input, representing a population of k + m + n 
+      organisms. k individuals are homozygous dominant for a factor, m are heterozygous, and n are homozygous 
+      recessive. This app returns the probability that a randomly selected mating pair will produce an 
+      individual with a dominant phenotype.
+    </h4>
+  </div>
+</div>
+<div class="container text-center"><br><br>
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <p><label for="id_post">k:</label><br>
+        </p>
+      </div>
+      <div class="col-md-8 text-left">
+        <p><input type="text" name="k" required id="id_k" value="{{k}}"></input></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <p><label for="id_post">m:</label><br>
+        </p>
+      </div>
+      <div class="col-md-8 text-left">
+        <p><input type="text" name="m" required id="id_m" value="{{m}}"></input></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-right">
+        <p><label for="id_post">n:</label><br>
+        </p>
+      </div>
+      <div class="col-md-8 text-left">
+        <p><input type="text" name="n" required id="id_n" value="{{n}}"></input></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 text-right">
+        <button type="submit">Submit</button><br><br>
+      </div>
+    </div>
+
+  </form>
+
+  <!--Output-->
+  <div class="row">
+    <div class="col-md-4 text-right">
+      <!--Jinja-formatted output label-->
+      <p><label>Result:</label></p>
+    </div>
+    <div class="col-md-8 text-left">
+      <p>{{result}}</p>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

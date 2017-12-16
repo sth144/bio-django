@@ -2,6 +2,10 @@ textarea {
   overflow: hidden;
 }
 
+td, th {
+  padding-left: 36px;
+}
+
 .jumbotron {
     background: #70D0B0;
     color: #666666;
