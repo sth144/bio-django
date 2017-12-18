@@ -7,29 +7,45 @@ from .forms import HomeForm
 from .process import *
 from .models import *
 
-# Create your views here.
-# def index(request):
-    #return HttpResponse('Hello from Python!')
-    #return render(request, 'form/form.html')
+
+# Default view for this app
 
 class HomeView(TemplateView):
+
+	# Define HTML template
 	template_name = 'ParamFibo/form.html'
 
+	# Handle HTTP GET requests through this view
+
 	def get(self, request):
+
+		# Define the form
 		form = HomeForm()
+
+		# Render the page
 		args = {'form': form,}
 		return render(request, self.template_name, args)
 
+	# Handle HTTP POST requests through this view
+
 	def post(self, request):
+
+		# Define the form
 		form = HomeForm(request.POST)
+
+		# Validate input
 		if form.is_valid():
+
+			# Store data
 			posted = form.cleaned_data['post']
 			against = form.cleaned_data['against']
 
 			# process data
 			result = population(posted, against)
-			outputLabel = ["Population size after ", " generations with ", " offspring per litter:"]
-			form = HomeForm()											# clear text field
+			outputLabel = ["Population size after ", " generations with ", " offspring per generation:"]
+			form = HomeForm()		
+
+		# Render page with result									
 		args = {
 			'form': form, 
 			'posted': posted, 

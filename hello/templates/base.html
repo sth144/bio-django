@@ -1,60 +1,68 @@
 <!DOCTYPE html>
+
+<!--Base HTML template for all pages on this site-->
+
 <html>
-<head>
-  <title>Bioinformatics on Django</title>
-  <link rel="icon" href="static/hello/ico/dna.ico">
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="static/hello/css/theme.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <head>
+    <title>Bioinformatics on Django</title>
 
-  <script type="text/javascript" src="static/hello/js/clickCopy.js"></script>
+    <!--Import icon, Bootstrap, theme, and jQuery-->
+    <link rel="icon" href="static/hello/ico/dna.ico">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/hello/css/theme.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-</head>
-<body>
-<nav class="navbar navbar-default navbar-static-top navbar-inverse">
-  <div class="container">
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-      </li>
-      <li>
-        <a href="db"><span class="glyphicon glyphicon-indent-left"></span> Sequences</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-wrench"></span> Apps <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="reversecomplement">Reverse Complement</a></li>
-            <li><a href="computegc">Compute GC Content</a></li>
-            <li><a href="consensussequence">Consensus Sequence</a></li>
-            <li><a href="basedistribution">DNA Base Distribution</a></li>
-            <li><a href="transcriber">DNA Sequence Transcriber</a></li>
-            <li><a href="translator">RNA Sequence Translator</a></li>
-            <li><a href="hammingdistance">Hamming Distance Calculator</a></li>
-            <li><a href="paramfibo">Parametric Fibonacci</a></li>
-            <li><a href="parsemotif">Parse Motif</a></li>
-            <li><a href="probabilitydom">Probability of Dominant Phenotype</a></li>
-            <li class="divider"></li>
-            <li><a href="about">About</a></li>
-            <li><a href="contact">Contact</a></li>
-          </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="navbar-right">
-        <a href="contact"><span class="glyphicon glyphicon-pencil"></span> Contact</a>
-      </li>
-      <li class="navbar-right">
-        <a href="about"><span class="glyphicon glyphicon-book"></span> About</a>
-      </li>
+    <!--Import clickCopy() client-side JavaScript-->
+    <script type="text/javascript" src="static/hello/js/clickCopy.js"></script>
 
-    </ul>
-  </div>
-</nav>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+          </li>
+          <li>
+            <a href="db"><span class="glyphicon glyphicon-indent-left"></span> Sequences</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-wrench"></span> Apps <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="reversecomplement">Reverse Complement</a></li>
+                <li><a href="computegc">Compute GC Content</a></li>
+                <li><a href="consensussequence">Consensus Sequence</a></li>
+                <li><a href="basedistribution">DNA Base Distribution</a></li>
+                <li><a href="transcriber">DNA Sequence Transcriber</a></li>
+                <li><a href="translator">RNA Sequence Translator</a></li>
+                <li><a href="hammingdistance">Hamming Distance Calculator</a></li>
+                <li><a href="paramfibo">Parametric Fibonacci</a></li>
+                <li><a href="parsemotif">Parse Motif</a></li>
+                <li><a href="probabilitydom">Probability of Dominant Phenotype</a></li>
+                <li class="divider"></li>
+                <li><a href="about">About</a></li>
+                <li><a href="contact">Contact</a></li>
+              </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-right">
+            <a href="contact"><span class="glyphicon glyphicon-pencil"></span> Contact</a>
+          </li>
+          <li class="navbar-right">
+            <a href="about"><span class="glyphicon glyphicon-book"></span> About</a>
+          </li>
 
-{% block content %}
-  <link rel="stylesheet" type="text/css" href="static/hello/css/theme.css"/>
-{% endblock %}
+        </ul>
+      </div>
+    </nav>
+
+    <!--Block content, templates inserted here-->
+
+    {% block content %}
+      <link rel="stylesheet" type="text/css" href="static/hello/css/theme.css"/>
+    {% endblock %}
 
 
     <div class="alert alert-info text-center" role="alert">
@@ -74,8 +82,8 @@
         </div>
         <div class="row">
           <p>
-              <p>Sean Hinds 2017</p>
-              <a href="https://www.github.com/sth144"> Check out my GitHub </a>
+            <p>Sean Hinds 2017</p>
+            <a href="https://www.github.com/sth144"> Check out my GitHub </a>
           </p>
         </div>
       </div>

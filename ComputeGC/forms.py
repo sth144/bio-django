@@ -1,5 +1,10 @@
 from django import forms
 from .models import *
 
-class HomeForm(forms.Form):			
+
+# Default form for this application
+
+class HomeForm(forms.Form):	
+
+	# input field for this form		
 	post = forms.CharField()

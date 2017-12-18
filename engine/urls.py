@@ -4,7 +4,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 import hello.views
-import form.views
 import ReverseComplement.views
 import ComputeGC.views
 import ConsensusSequence.views
@@ -15,18 +14,16 @@ import HammingDistance.views
 import ParamFibo.views
 import ParseMotif.views
 import ProbabilityDom.views
-import Data.views                                   # Had to capitalize for Heroku
+import Data.views                                  
 
-# Examples:
-# url(r'^$', 'engine.views.home', name='home'),
-# url(r'^blog/', include('blog.urls')),
+
+# Url patterns for this site
 
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', Data.views.db, name='db'),
     url(r'^about', hello.views.about, name='about'),
     url(r'^contact', hello.views.contact, name='contact'),
-    url(r'^form', form.views.HomeView.as_view(), name='form'),
     url(r'^reversecomplement', ReverseComplement.views.HomeView.as_view(), name='form'),
     url(r'^computegc', ComputeGC.views.HomeView.as_view(), name='form'),
     url(r'^consensussequence', ConsensusSequence.views.HomeView.as_view(), name='form'),

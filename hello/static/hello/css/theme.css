@@ -1,3 +1,9 @@
+/************************************************************
+  Title: CSS Theme for Bioinformatics on Django site
+  Author: Sean Hinds
+  Date: 12/17/17
+************************************************************/
+
 textarea {
   overflow: hidden;
 }

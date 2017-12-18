@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<!--Jumbotron header for this app-->
 <div class="jumbotron text-center">
   <div class="container">
       <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
@@ -11,8 +12,13 @@
 </div>
 <div class="container text-center"><br><br>
 
+  <!--UI form for this page-->
   <form method="POST">
+
+    <!--Token for security-->
     {% csrf_token %}
+
+    <!--Generations input-->
     <div class="row">
       <div class="col-md-4 text-right">
         <p><label for="id_post">
@@ -25,6 +31,7 @@
       </div>
     </div>
 
+    <!--Offspring per generation input-->
     <div class="row">
       <div class="col-md-4 text-right">
         <p><label for="id_against">
@@ -36,6 +43,7 @@
       </div>
     </div>
 
+    <!--Submit-->
     <div class="row">
       <div class="col-md-5 text-right">
         <button type="submit">Submit</button><br><br>

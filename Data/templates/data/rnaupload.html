@@ -2,17 +2,23 @@
 {% load staticfiles %}
 
 {% block content %}
+
+<!--All HTML contained within container in this app-->
 <div class="container text-center">
 
+  <!--Jumbotron header for this page-->
   <div class="jumbotron text-center">
     <h1>Upload an RNA sequence</h1>
   </div>
 
+  <!--UI form for this app-->
   <form method="POST">
+    <!--Validate input, token for security-->
     {% csrf_token %}
 
     <div class="row">
 
+      <!--Input name-->
       <div class="col-md-1"></div>
       <div class="col-md-1 text-right">
         <p><label for="id_name">Name:</label>
@@ -26,6 +32,7 @@
 
     <div class="row">
 
+      <!--Input sequence-->
       <div class="col-md-1"></div>
       <div class="col-md-1 text-right">
         <p><label for="id_sequence">Sequence:</label>
@@ -39,6 +46,7 @@
 
     <div class="row">
 
+      <!--Submit-->
       <div class="col-md-8 text-right">
         <button type="submit">Submit</button>
       </div>

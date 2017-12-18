@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<!--Jumbotron header for this page-->
 <div class="jumbotron text-center">
   <div class="container">
       <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
@@ -15,10 +16,16 @@
     </h4>
   </div>
 </div>
+
 <div class="container text-center"><br><br>
 
+  <!--UI form for this app-->
   <form method="POST">
+    
+    <!--Security token-->
     {% csrf_token %}
+
+    <!--Input-->
     <div class="row">
       <div class="col-md-4 text-right">
         <p><label for="id_post">k:</label><br>
@@ -50,6 +57,7 @@
     </div>
 
     <div class="row">
+      <!--Submit-->
       <div class="col-md-5 text-right">
         <button type="submit">Submit</button><br><br>
       </div>

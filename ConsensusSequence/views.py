@@ -7,26 +7,42 @@ from .forms import HomeForm
 from .process import *
 from .models import *
 
-# Create your views here.
-# def index(request):
-    #return HttpResponse('Hello from Python!')
-    #return render(request, 'form/form.html')
+
+# Default View for this app
 
 class HomeView(TemplateView):
+
+	# Define HTML template for this app
 	template_name = 'ConsensusSequence/form.html'
 
+	# Handle HTTP GET requests through this view
+
 	def get(self, request):
+
+		# Define the form
 		form = HomeForm()
+
+		# Render the page with the form
 		args = {'form': form,}
 		return render(request, self.template_name, args)
 
+	# Handle Http POST requests through this view
+
 	def post(self, request):
+		
+		# Define the form
 		form = HomeForm(request.POST)
+
+		# Validate input
 		if form.is_valid():
+
+			# Store input data
 			posted = form.cleaned_data['post']
+
+			# Process data
 			result = consensusSequence(posted)
-			print(result)
-			form = HomeForm()											# clear text field
-			# return redirect('form/form.html')							# refresh page (?)
+			form = HomeForm()											
+
+		# Render page with form and result
 		args = {'form': form, 'posted': posted, 'result': result}
 		return render(request, self.template_name, args)

@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<!--Jumbotron header for this page-->
 <div class="jumbotron text-center">
   <div class="container">
       <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
@@ -13,8 +14,13 @@
 
   <!--HomeForm-->
   <form method="POST">
+    
+    <!--For security-->
     {% csrf_token %}
+    
     <div class="row">
+
+      <!--Input-->
       <div class="col-md-3 text-right">
         <p><label for="id_post">Motif Sequence:</label><br>
         </p>
@@ -35,14 +41,19 @@
     </div>
 
     <div class="row">
+
+      <!--Submit-->
       <div class="col-md-9 text-right">
         <button type="submit">Submit</button><br><br>
       </div>
+
     </div>
 
   </form>
 
   <div class="row">
+
+    <!--Output-->
     <div class="col-md-3 text-right">
       <p><label>Search Result:</label></p>
     </div>
@@ -53,6 +64,7 @@
         {% endfor %}
       </p>
     </div>
+    
   </div>
 </div>
 

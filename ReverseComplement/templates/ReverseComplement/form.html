@@ -3,36 +3,53 @@
 
 {% block content %}
 
+<!--Jumbotron header for this page-->
 <div class="jumbotron text-center">
   <div class="container">
       <img class="my-icon" src="{% static 'hello/img/dna.png'%}">
     <h1>Reverse Complement</h1>
   </div>
 </div>
+
 <div class="container text-center"><br><br>
-<form method="POST">
-  {% csrf_token %}
+
+  <!--UI field for this form-->
+  <form method="POST">
+
+    <!--Security token-->
+    {% csrf_token %}
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+      <div class="col-md-2 text-right">
+        <!--Input-->
+        <label for="id_post">Input:</label>
+
+      </div>
+      <div class="col-md-8 text-left">
+        <textarea rows="3" cols="56" name="post" required id="id_post" />{{posted}}</textarea>
+      </div>
+    </div><br>
+
+    <!--Submit-->
+    <button type="submit">Submit</button>
+  
+  </form><br>
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-2 text-right">
-      <label for="id_post">Input:</label>
+      <!--Output-->
+      <strong>Output:</strong>
     </div>
     <div class="col-md-8 text-left">
-      <textarea rows="3" cols="56" name="post" required id="id_post" />{{posted}}</textarea>
+      <textarea rows="3" cols="56" id="output">{{text}}</textarea>
     </div>
+
   </div><br>
-  <button type="submit">Submit</button>
-</form><br>
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-2 text-right">
-    <strong>Output:</strong>
-  </div>
-  <div class="col-md-8 text-left">
-    <textarea rows="3" cols="56" id="output">{{text}}</textarea>
+    <!--clickCopy() functionality-->
+    <button onclick="clickCopy()">Copy</button>
   </div>
 
-</div><br>
-<button onclick="clickCopy()">Copy</button>
 </div>
 {% endblock %}

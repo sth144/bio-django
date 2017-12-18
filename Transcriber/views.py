@@ -7,26 +7,40 @@ from .forms import HomeForm
 from .process import *
 from .models import *
 
-# Create your views here.
-# def index(request):
-    #return HttpResponse('Hello from Python!')
-    #return render(request, 'form/form.html')
+
+# Default view for this app
 
 class HomeView(TemplateView):
+
+	# Define the template
 	template_name = 'Transcriber/form.html'
 
+	# Handle HTTP GET requests through this view
+
 	def get(self, request):
+
+		# Define the view
 		form = HomeForm()
+
+		# Render the page
 		args = {'form': form,}
 		return render(request, self.template_name, args)
 
+
+	# Handle HTTP POST requests through this view
+
 	def post(self, request):
+
+		# Define the view
 		form = HomeForm(request.POST)
+
+		# Validate input
 		if form.is_valid():
 			posted = form.cleaned_data['post']
 			result = transcribe(posted)
-			form = HomeForm()											# clear text field
-			# return redirect('form/form.html')							# refresh page (?)
+			form = HomeForm()											
+
+		# Render the page
 		args = {
 			'form': form, 
 			'posted': posted, 

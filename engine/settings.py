@@ -30,7 +30,7 @@ DEBUG = True
 TEST_RUNNER = 'engine.heroku_test_runner.HerokuDiscoverRunner'
 
 
-# Application definition
+# Application installations
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hello',
-    'form',
     'Data',                         # Had to capitalize to avoid equivocation. See appconfig
     'ReverseComplement',
     'ComputeGC',
@@ -53,6 +52,9 @@ INSTALLED_APPS = (
     'ParseMotif',
     'ProbabilityDom',
 )
+
+
+# Middleware installations
 
 MIDDLEWARE_CLASSES = (
     # Simplified static file serving.
