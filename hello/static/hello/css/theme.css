@@ -12,6 +12,11 @@ td, th {
   padding-left: 36px;
 }
 
+p {
+  /* Cause sequence text to wrap without newline characters */
+  word-wrap: break-word;
+}
+
 .jumbotron {
     background: #70D0B0;
     color: #666666;
