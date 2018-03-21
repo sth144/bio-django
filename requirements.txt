@@ -1,5 +1,8 @@
 dj-database-url==0.4.2
-gunicorn==19.7.1
-virtualenv==15.1.0
-numpy==1.13.3
 Django==1.8
+django-numpy==1.0.1
+gunicorn==19.7.1
+numpy==1.13.3
+psycopg2==2.7.4
+virtualenv==15.1.0
+whitenoise==3.3.1
